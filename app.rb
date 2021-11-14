@@ -24,8 +24,9 @@ post '/visit' do
   @date = params[:date]
   @phone = params[:phone]
   @barber = params[:barber]
+  @color = params[:color]
   dbase = File.open 'public/customers.txt', 'a'
-  dbase.puts  "#{@customer} | #{@date} | #{@phone} | #{@barber} \n"
+  dbase.puts  "#{@customer} | #{@date} | #{@phone} | #{@barber} | #{@color}\n"
   dbase.close
   erb :visit
 end
